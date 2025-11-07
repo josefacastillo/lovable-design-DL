@@ -4,21 +4,21 @@ import { Home, Users, Megaphone } from "lucide-react";
 const topics = [
   {
     id: 1,
-    title: "Stadtverräteleiffraktion",
+    title: "Stadtverordnetenfraktion",
     icon: Users,
     action: "Mehr erfahren",
   },
   {
     id: 2,
-    title: "Unsere Standpunktes",
+    title: "Unsere Standpunkte",
     icon: Home,
     action: "Mehr erfahren",
   },
   {
     id: 3,
-    title: "Termine & Aktion",
+    title: "Termine & Aktionen",
     icon: Megaphone,
-    action: "Mehr öffanen",
+    action: "Mehr öffnen",
   },
 ];
 

@@ -9,22 +9,22 @@ import celebrationImage from "@/assets/election-celebration.jpg";
 const newsItems = [
   {
     id: 1,
-    title: "Mitandeckel jetzt!",
-    subtitle: "Neue Aktion läuft",
+    title: "Das Kulturkarree braucht ein neues Konzept",
+    subtitle: "Pressemitteilung",
     image: housingImage,
     isNew: true,
   },
   {
     id: 2,
-    title: "Solidarität in Krisen",
-    subtitle: "Unser Standpunkt",
+    title: "Wohnraumpotenziale heben – günstigen Wohnraum schaffen",
+    subtitle: "Antrag zur StVV",
     image: meetingImage,
     isNew: false,
   },
   {
     id: 3,
-    title: "Termine geplant",
-    subtitle: "Bitte vormerken",
+    title: "Immobilienspekulanten drangsalieren Mieter*innen",
+    subtitle: "Strahlenberger Straße",
     image: celebrationImage,
     isNew: false,
   },

@@ -7,9 +7,10 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-bold mb-4">Über Uns</h3>
-            <p className="text-sm opacity-90">
-              Impressum & Datenschutzm
-            </p>
+            <ul className="text-sm space-y-2 opacity-90">
+              <li><a href="#" className="hover:underline">Impressum</a></li>
+              <li><a href="#" className="hover:underline">Datenschutz</a></li>
+            </ul>
           </div>
           
           <div>
@@ -35,7 +36,7 @@ export const Footer = () => {
         </div>
         
         <div className="text-center text-sm opacity-75 pt-8 border-t border-white/20">
-          © 2023 DIE LINKE: Kreisverband Offenbach Stadt
+          © 2025 DIE LINKE Kreisverband Offenbach Stadt
         </div>
       </div>
     </footer>

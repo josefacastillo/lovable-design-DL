@@ -13,7 +13,10 @@ export const Header = () => {
                 Themen
               </a>
               <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Fractionskräfte
+                Fraktion
+              </a>
+              <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Aktuelles
               </a>
             </nav>
           </div>

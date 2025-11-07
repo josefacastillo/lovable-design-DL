@@ -14,12 +14,12 @@ export const NewsletterSection = () => {
                 <div className="bg-primary text-primary-foreground p-3 rounded">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div>
+              <div>
                   <h3 className="font-bold text-lg text-foreground mb-2">
-                    Kontakt aufnehmen
+                    Bleiben Sie informiert
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Komment, Spendenwart
+                    Newsletter abonnieren
                   </p>
                 </div>
               </div>
@@ -27,7 +27,7 @@ export const NewsletterSection = () => {
               <div className="flex gap-2">
                 <Input 
                   type="email" 
-                  placeholder="@kard.sozialter"
+                  placeholder="ihre.email@beispiel.de"
                   className="flex-1"
                 />
                 <Button className="bg-accent hover:bg-accent/90 text-white shrink-0">
@@ -36,7 +36,9 @@ export const NewsletterSection = () => {
               </div>
               
               <p className="text-center text-sm text-muted-foreground mt-6">
-                Alle Beiträge anzeigen
+                <a href="#" className="hover:text-primary transition-colors">
+                  Alle Beiträge anzeigen
+                </a>
               </p>
             </CardContent>
           </Card>
