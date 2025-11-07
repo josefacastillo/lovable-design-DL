@@ -10,13 +10,22 @@ export const Header = () => {
             <h1 className="text-2xl font-bold text-primary">DIE LINKE</h1>
             <nav className="hidden md:flex items-center gap-6">
               <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Themen
+                Start
               </a>
               <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Fraktion
               </a>
               <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Themen
+              </a>
+              <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Aktuelles
+              </a>
+              <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Kreisvorstand
+              </a>
+              <a href="#" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Kontakt
               </a>
             </nav>
           </div>

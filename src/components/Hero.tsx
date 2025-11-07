@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 import heroImage from "@/assets/hero-protest.jpg";
 
 export const Hero = () => {
@@ -17,6 +18,35 @@ export const Hero = () => {
         <p className="text-xl md:text-2xl mb-8 font-medium">
           DIE LINKE Kreisverband Offenbach Stadt
         </p>
+        <div className="flex items-center gap-6 mb-8">
+          <a 
+            href="https://www.facebook.com/DieLinkeOffenbach" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+            aria-label="Facebook"
+          >
+            <Facebook className="w-8 h-8" />
+          </a>
+          <a 
+            href="https://twitter.com/linke_of" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+            aria-label="Twitter"
+          >
+            <Twitter className="w-8 h-8" />
+          </a>
+          <a 
+            href="https://www.instagram.com/die_linke_offenbach/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-8 h-8" />
+          </a>
+        </div>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-6 text-lg">
           Jetzt Mitglied werden
         </Button>

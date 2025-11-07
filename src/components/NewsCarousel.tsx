@@ -2,6 +2,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import housingImage from "@/assets/housing-article.jpg";
 import meetingImage from "@/assets/community-meeting.jpg";
 import celebrationImage from "@/assets/election-celebration.jpg";
@@ -34,38 +41,40 @@ export const NewsCarousel = () => {
   return (
     <section className="bg-white py-8 border-b">
       <div className="container mx-auto px-4">
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="shrink-0">
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide flex-1">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
             {newsItems.map((item) => (
-              <Card key={item.id} className="min-w-[300px] shrink-0 hover:shadow-md transition-shadow">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-4">
-                    <img 
-                      src={item.image} 
-                      alt={item.title}
-                      className="w-20 h-20 object-cover rounded"
-                    />
-                    <div className="flex-1">
-                      {item.isNew && (
-                        <Badge className="bg-primary text-primary-foreground mb-2">Neu</Badge>
-                      )}
-                      <h3 className="font-bold text-foreground">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+              <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <Card className="hover:shadow-md transition-shadow">
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-4">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-20 h-20 object-cover rounded"
+                      />
+                      <div className="flex-1">
+                        {item.isNew && (
+                          <Badge className="bg-primary text-primary-foreground mb-2">Neu</Badge>
+                        )}
+                        <h3 className="font-bold text-foreground">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
             ))}
-          </div>
-          
-          <Button variant="ghost" size="icon" className="shrink-0">
-            <ChevronRight className="h-6 w-6" />
-          </Button>
-        </div>
+          </CarouselContent>
+          <CarouselPrevious className="left-0" />
+          <CarouselNext className="right-0" />
+        </Carousel>
       </div>
     </section>
   );
