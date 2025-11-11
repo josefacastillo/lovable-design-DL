@@ -1,42 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import housingImage from "@/assets/housing-article.jpg";
-import meetingImage from "@/assets/community-meeting.jpg";
-import celebrationImage from "@/assets/election-celebration.jpg";
-
-const articles = [
-  {
-    id: 1,
-    category: "Wohnungspolitik",
-    title: "Wohnraumpotenziale heben – günstigen Wohnraum schaffen",
-    date: "31. Oktober 2025",
-    link: "Weiterlesen",
-    image: housingImage,
-  },
-  {
-    id: 2,
-    category: "Kommunalwahl",
-    title: "Die Linke wählt Kandidat*innenliste für die Kommunalwahl",
-    date: "21. Oktober 2025",
-    link: "Weiterlesen",
-    image: celebrationImage,
-  },
-  {
-    id: 3,
-    category: "Soziales",
-    title: "Die Linke Offenbach prüft Heizkostenabrechnungen",
-    date: "14. Oktober 2025",
-    link: "Weiterlesen",
-    image: meetingImage,
-  },
-];
+import { articlesData } from "@/data/articlesData";
 
 export const ArticlesSection = () => {
+  const { sectionTitle, articles } = articlesData;
+
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">
-          Aktuelle Beiträge
+          {sectionTitle}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -1,33 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import person1 from "@/assets/person-1.jpg";
-import person2 from "@/assets/person-2.jpg";
-
-const team = [
-  {
-    id: 1,
-    name: "Gizem Erinç-Çiftçi",
-    role: "Fraktionsvorsitzende",
-    image: person1,
-  },
-  {
-    id: 2,
-    name: "Markus Philippi",
-    role: "Stadtverordneter",
-    image: person2,
-  },
-];
+import { teamData } from "@/data/teamData";
 
 export const TeamSection = () => {
+  const { sectionTitle, members } = teamData;
+
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">
-          Unsere Fraktion
+          {sectionTitle}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {team.map((member) => (
+          {members.map((member) => (
             <Card 
               key={member.id} 
               className="text-center hover:shadow-lg transition-all cursor-pointer group"
