@@ -1,4 +1,4 @@
-import { Twitter, Instagram } from "lucide-react";
+import { Twitter, Instagram, Facebook } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -16,6 +16,9 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Social Media</h3>
             <div className="flex gap-4">
+              <a href="https://www.facebook.com/dielinkeoffenbach" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Facebook className="w-5 h-5" />
+              </a>
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <Twitter className="w-5 h-5" />
               </a>
@@ -28,8 +31,11 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Sitemap</h3>
             <ul className="text-sm space-y-2 opacity-90">
-              <li><a href="#" className="hover:underline">Startseite</a></li>
+              <li><a href="#" className="hover:underline">Start</a></li>
+              <li><a href="#" className="hover:underline">Fraktion</a></li>
               <li><a href="#" className="hover:underline">Themen</a></li>
+              <li><a href="#" className="hover:underline">Aktuelles</a></li>
+              <li><a href="#" className="hover:underline">Kreisvorstand</a></li>
               <li><a href="#" className="hover:underline">Kontakt</a></li>
             </ul>
           </div>
