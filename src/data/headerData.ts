@@ -11,8 +11,6 @@ export const headerData: HeaderData = {
     { label: "Die Linke hilft", href: "/die-linke-hilft" },
     { label: "Hartz-4 Hilfe", href: "/hartz-4-hilfe" },
     { label: "Kontakt", href: "/kontakt" },
-  ],
-  secondaryNavItems: [
     { label: "Archiv", href: "/archiv" },
   ],
 };

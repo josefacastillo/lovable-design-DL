@@ -13,11 +13,11 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {sections.map((section, idx) => (
-            <div key={idx} className="flex flex-col items-center md:items-start">
-              <h3 className="font-bold mb-4">{section.title}</h3>
-              <ul className="text-sm space-y-2 opacity-90">
+            <div key={idx} className="mx-auto md:mx-0">
+              <h3 className="font-bold mb-4 text-center md:text-left">{section.title}</h3>
+              <ul className="text-sm space-y-2 opacity-90 text-center md:text-left">
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
                     <a href={link.href} className="hover:underline">
@@ -29,8 +29,8 @@ export const Footer = () => {
             </div>
           ))}
           
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-bold mb-4">Social Media</h3>
+          <div className="mx-auto md:mx-0">
+            <h3 className="font-bold mb-4 text-center md:text-left">Social Media</h3>
             <div className="flex gap-4 justify-center md:justify-start">
               {socialLinks.map((social, idx) => {
                 const Icon = socialIcons[social.platform];
