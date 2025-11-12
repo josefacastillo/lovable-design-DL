@@ -6,4 +6,5 @@ export interface NavItem {
 export interface HeaderData {
   logo: string;
   navItems: NavItem[];
+  secondaryNavItems?: NavItem[];
 }

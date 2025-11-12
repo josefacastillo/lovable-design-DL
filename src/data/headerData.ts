@@ -3,11 +3,16 @@ import { HeaderData } from "@/types/header";
 export const headerData: HeaderData = {
   logo: "DIE LINKE",
   navItems: [
-    { label: "Start", href: "/" },
-    { label: "Fraktion", href: "/fraktion" },
-    { label: "Themen", href: "/themen" },
-    { label: "Aktuelles", href: "/aktuelles" },
+    { label: "Startseite", href: "/" },
+    { label: "Kreisverband", href: "/kreisverband" },
     { label: "Kreisvorstand", href: "/kreisvorstand" },
+    { label: "Fraktion", href: "/fraktion" },
+    { label: "DIE LINKE ECKE", href: "/die-linke-ecke" },
+    { label: "Die Linke hilft", href: "/die-linke-hilft" },
+    { label: "Hartz-4 Hilfe", href: "/hartz-4-hilfe" },
     { label: "Kontakt", href: "/kontakt" },
+  ],
+  secondaryNavItems: [
+    { label: "Archiv", href: "/archiv" },
   ],
 };
