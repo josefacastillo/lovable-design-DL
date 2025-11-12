@@ -8,8 +8,14 @@ export const headerData: HeaderData = {
     { label: "Kreisvorstand", href: "/kreisvorstand" },
     { label: "Fraktion", href: "/fraktion" },
     { label: "DIE LINKE ECKE", href: "/die-linke-ecke" },
-    { label: "Die Linke hilft", href: "/die-linke-hilft" },
-    { label: "Hartz-4 Hilfe", href: "/hartz-4-hilfe" },
+    { 
+      label: "Hilfe & Beratung", 
+      href: "#",
+      submenu: [
+        { label: "Die Linke hilft", href: "/die-linke-hilft" },
+        { label: "Hartz-4 Hilfe", href: "/hartz-4-hilfe" },
+      ]
+    },
     { label: "Kontakt", href: "/kontakt" },
     { label: "Archiv", href: "/archiv" },
   ],
