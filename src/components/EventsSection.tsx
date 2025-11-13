@@ -9,26 +9,28 @@ import { cn } from "@/lib/utils";
 export const EventsSection = () => {
   const { sectionTitle, events } = eventsData;
   const [viewMode, setViewMode] = useState<"list" | "calendar">("list");
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date()
+  );
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("de-DE", { 
-      day: "2-digit", 
-      month: "long", 
-      year: "numeric" 
+    return date.toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
     });
   };
 
   // Create a set of dates that have events
-  const eventDates = events.map(event => {
+  const eventDates = events.map((event) => {
     const date = new Date(event.date);
     return date.toDateString();
   });
 
   // Get events for selected date
   const selectedDateEvents = selectedDate
-    ? events.filter(event => {
+    ? events.filter((event) => {
         const eventDate = new Date(event.date);
         return eventDate.toDateString() === selectedDate.toDateString();
       })
@@ -48,10 +50,10 @@ export const EventsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             {sectionTitle}
           </h2>
           <div className="flex gap-2">
@@ -75,19 +77,19 @@ export const EventsSection = () => {
             </Button>
           </div>
         </div>
-        
+
         {viewMode === "list" ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
             {events.slice(0, 3).map((event) => (
-              <Card 
-                key={event.id} 
-                className="hover:shadow-lg transition-all cursor-pointer group border-l-4 border-l-primary"
+              <Card
+                key={event.id}
+                className=" hover:shadow-lg transition-all cursor-pointer group border-l-4 border-l-primary "
               >
-                <CardContent className="p-6">
+                <CardContent className="bg-secondary/10 p-6 ">
                   <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                     {event.title}
                   </h3>
-                  
+
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <Calendar className="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -95,14 +97,14 @@ export const EventsSection = () => {
                         {formatDate(event.date)}
                       </span>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <Clock className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                       <span className="text-muted-foreground text-sm">
                         {event.time} Uhr
                       </span>
                     </div>
-                    
+
                     {event.location && (
                       <div className="flex items-start gap-3">
                         <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -112,7 +114,7 @@ export const EventsSection = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   {event.description && (
                     <p className="text-sm text-muted-foreground mt-4 pt-4 border-t">
                       {event.description}
@@ -134,24 +136,26 @@ export const EventsSection = () => {
                 className={cn("p-3 pointer-events-auto")}
               />
             </Card>
-            
+
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-foreground">
-                {selectedDate ? formatDate(selectedDate.toISOString()) : "Wählen Sie ein Datum"}
+                {selectedDate
+                  ? formatDate(selectedDate.toISOString())
+                  : "Wählen Sie ein Datum"}
               </h3>
-              
+
               {selectedDateEvents.length > 0 ? (
                 <div className="space-y-4">
                   {selectedDateEvents.map((event) => (
-                    <Card 
-                      key={event.id} 
+                    <Card
+                      key={event.id}
                       className="border-l-4 border-l-primary"
                     >
                       <CardContent className="p-4">
                         <h4 className="font-bold mb-3 text-foreground">
                           {event.title}
                         </h4>
-                        
+
                         <div className="space-y-2">
                           <div className="flex items-start gap-3">
                             <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -159,7 +163,7 @@ export const EventsSection = () => {
                               {event.time} Uhr
                             </span>
                           </div>
-                          
+
                           {event.location && (
                             <div className="flex items-start gap-3">
                               <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -168,7 +172,7 @@ export const EventsSection = () => {
                               </span>
                             </div>
                           )}
-                          
+
                           {event.description && (
                             <p className="text-sm text-muted-foreground mt-2 pt-2 border-t">
                               {event.description}

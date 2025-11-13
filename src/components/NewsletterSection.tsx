@@ -5,7 +5,8 @@ import { Mail } from "lucide-react";
 import { newsletterData } from "@/data/newsletterData";
 
 export const NewsletterSection = () => {
-  const { title, description, placeholder, ctaText, linkText, linkHref } = newsletterData;
+  const { title, description, placeholder, ctaText, linkText, linkHref } =
+    newsletterData;
 
   return (
     <section className="py-16 bg-muted/30">
@@ -17,29 +18,30 @@ export const NewsletterSection = () => {
                 <div className="bg-primary text-primary-foreground p-3 rounded">
                   <Mail className="w-6 h-6" />
                 </div>
-              <div>
+                <div>
                   <h3 className="font-bold text-lg text-foreground mb-2">
                     {title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {description}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{description}</p>
                 </div>
               </div>
-              
+
               <div className="flex gap-2">
-                <Input 
-                  type="email" 
+                <Input
+                  type="email"
                   placeholder={placeholder}
                   className="flex-1"
                 />
-                <Button className="bg-accent hover:bg-accent/90 text-white shrink-0">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white shrink-0">
                   {ctaText}
                 </Button>
               </div>
-              
+
               <p className="text-center text-sm text-muted-foreground mt-6">
-                <a href={linkHref} className="hover:text-primary transition-colors">
+                <a
+                  href={linkHref}
+                  className="hover:text-primary transition-colors"
+                >
                   {linkText}
                 </a>
               </p>
