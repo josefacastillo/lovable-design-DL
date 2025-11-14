@@ -44,7 +44,8 @@ export const Hero = () => {
         </div>
         <Button
           size="lg"
-          className="bg-white/70 hover:bg-white/90 text-secondary font-semibold px-8 py-6 text-lg"
+          variant="secondary"
+          className="font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
         >
           {ctaText}
         </Button>

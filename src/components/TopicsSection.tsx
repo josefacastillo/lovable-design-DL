@@ -29,13 +29,13 @@ export const TopicsSection = () => {
                 <CardContent className="p-8 text-center">
                   <div className="mb-6 flex justify-center">
                     <div className="w-24 h-24 rounded-full bg-accent flex items-center justify-center group-hover:bg-accent/70 transition-colors">
-                      <IconComponent className="w-12 h-12 text-linke-darkgreen" />
+                      <IconComponent className="w-12 h-12 text-accent-foreground" />
                     </div>
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">
                     {topic.title}
                   </h3>
-                  <p className="text-linke-darkgreen font-semibold group-hover:underline">
+                  <p className="text-accent font-semibold group-hover:underline">
                     {topic.action}
                   </p>
                 </CardContent>

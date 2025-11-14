@@ -15,7 +15,7 @@ export const NewsCarousel = () => {
   const { newsItems } = newsData;
 
   return (
-    <section className="bg-white py-8 border-b">
+    <section className="bg-card py-8 border-b">
       <div className="container mx-auto px-4">
         <Carousel
           opts={{
