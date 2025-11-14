@@ -8,24 +8,25 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 5%;
+    /* Base colors - Light Mode */
+    --background: 0 0% 97%; /* Light gray inspired by die-linke.de */
+    --foreground: 191 100% 18%; /* Dark green for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 0 0% 10%;
 
-    /* LISSI Main Colors */
+    /* LISSI Main Brand Colors */
     --primary: 0 100% 50%; /* Die Linke Rot #FF0000 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 328 100% 22%; /* Dunkelrot #6F003C */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 173 100% 35%; /* Türkis #00B19C */
     --accent-foreground: 0 0% 100%;
@@ -34,12 +35,12 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 88%;
-    --input: 0 0% 88%;
+    --input: 0 0% 90%;
     --ring: 0 100% 50%;
 
-    --radius: 0.375rem;
+    --radius: 0.5rem;
     
-    /* LISSI Extended Colors */
+    /* LISSI Extended Color Palette */
     --linke-darkgreen: 191 100% 18%; /* Dunkelgrün #004B5B */
     --linke-turquoise: 173 100% 35%; /* Türkis #00B19C */
     --linke-violet: 288 100% 32%; /* Violett #8100A1 */
@@ -48,66 +49,81 @@ All colors MUST be HSL.
     --linke-lightblue: 240 100% 92%; /* Hellblau #D4D4FF */
     
     /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(328 100% 22% / 0.9), hsl(0 100% 50% / 0.85));
+    --gradient-hero: linear-gradient(135deg, hsl(328 100% 22% / 0.95), hsl(0 100% 50% / 0.9));
     --gradient-accent: linear-gradient(135deg, hsl(173 100% 35%), hsl(191 100% 18%));
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
-    --shadow-card: 0 2px 10px hsl(0 0% 0% / 0.06);
-    --shadow-card-hover: 0 8px 30px hsl(0 0% 0% / 0.12);
+    --gradient-vibrant: linear-gradient(90deg, hsl(0 100% 50%), hsl(288 100% 32%), hsl(227 62% 47%));
+    --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.08);
+    --shadow-card-hover: 0 8px 32px hsl(0 0% 0% / 0.15);
+    --shadow-primary: 0 4px 20px hsl(0 100% 50% / 0.25);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 191 100% 18%;
+    --sidebar-primary: 0 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 191 100% 18%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 100% 50%;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
+    /* Base colors - Dark Mode */
+    --background: 191 100% 8%; /* Dark teal background */
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 191 80% 12%; /* Slightly lighter dark teal */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 191 80% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 0 100% 50%; /* Die Linke Rot #FF0000 */
+    /* LISSI Main Brand Colors - Adjusted for dark mode */
+    --primary: 0 100% 55%; /* Slightly brighter red for dark backgrounds */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 328 100% 22%; /* Dunkelrot #6F003C */
+    --secondary: 328 100% 30%; /* Adjusted dark red for better visibility */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 191 50% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 173 100% 35%; /* Türkis #00B19C */
-    --accent-foreground: 0 0% 100%;
+    --accent: 173 100% 40%; /* Brighter turquoise for dark mode */
+    --accent-foreground: 191 100% 8%;
 
-    --destructive: 0 62% 51%;
+    --destructive: 0 85% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 100% 50%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 191 40% 25%;
+    --input: 191 40% 22%;
+    --ring: 0 100% 55%;
+    
+    /* Extended colors remain the same but appear differently on dark bg */
+    --linke-darkgreen: 191 100% 22%; /* Slightly lighter for dark mode */
+    --linke-turquoise: 173 100% 40%;
+    --linke-violet: 288 100% 40%;
+    --linke-pink: 299 57% 70%;
+    --linke-blue: 227 62% 55%;
+    --linke-lightblue: 240 100% 85%;
+    
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(191 100% 8% / 0.95), hsl(328 100% 22% / 0.85));
+    --gradient-accent: linear-gradient(135deg, hsl(173 100% 40%), hsl(191 100% 25%));
+    --gradient-card: linear-gradient(180deg, hsl(191 80% 12%), hsl(191 70% 10%));
+    --gradient-vibrant: linear-gradient(90deg, hsl(0 100% 55%), hsl(288 100% 40%), hsl(227 62% 55%));
+    --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-primary: 0 4px 20px hsl(0 100% 50% / 0.4);
+    
+    --sidebar-background: 191 80% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 100% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 191 50% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 191 40% 20%;
+    --sidebar-ring: 0 100% 55%;
   }
 }
 
