@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Search, ChevronDown, Menu } from "lucide-react";
 import { headerData } from "@/data/headerData";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,6 +55,7 @@ export const Header = () => {
           </div>
           
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
