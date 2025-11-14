@@ -32,7 +32,7 @@ export const NewsletterSection = () => {
                   placeholder={placeholder}
                   className="flex-1"
                 />
-                <Button className="bg-secondary hover:bg-secondary/90 text-white shrink-0">
+                <Button variant="secondary" className="shrink-0">
                   {ctaText}
                 </Button>
               </div>

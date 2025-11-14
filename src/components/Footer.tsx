@@ -50,7 +50,7 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="text-center text-sm opacity-75 pt-8 border-t border-white/20">
+        <div className="text-center text-sm opacity-75 pt-8 border-t border-secondary-foreground/20">
           {copyright}
         </div>
       </div>
