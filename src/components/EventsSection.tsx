@@ -53,7 +53,7 @@ export const EventsSection = () => {
     <section className="py-16 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             {sectionTitle}
           </h2>
           <div className="flex gap-2">
@@ -83,9 +83,9 @@ export const EventsSection = () => {
             {events.slice(0, 3).map((event) => (
               <Card
                 key={event.id}
-                className=" hover:shadow-lg transition-all cursor-pointer group border-l-4 border-l-primary "
+                className="hover:shadow-lg transition-all cursor-pointer group border-l-4 border-l-primary"
               >
-                <CardContent className="bg-secondary/10 p-6 ">
+                <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                     {event.title}
                   </h3>
