@@ -18,23 +18,29 @@ export const Header = () => {
   const { logo, navItems } = headerData;
 
   return (
-    <header className="bg-card border-b sticky top-0 z-50">
+    <header className="bg-card border-b sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
             <h1 className="text-2xl font-bold text-primary">{logo}</h1>
-            <nav className="hidden lg:flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-6" role="navigation" aria-label="Hauptnavigation">
               {navItems.map((item, idx) => (
                 item.submenu ? (
                   <DropdownMenu key={idx}>
-                    <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                    <DropdownMenuTrigger 
+                      className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary rounded-sm px-2 py-1"
+                      aria-label={`${item.label} Menü öffnen`}
+                    >
                       {item.label}
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-4 w-4" aria-hidden="true" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="bg-card">
                       {item.submenu.map((subItem, subIdx) => (
                         <DropdownMenuItem key={subIdx} asChild>
-                          <a href={subItem.href} className="cursor-pointer">
+                          <a 
+                            href={subItem.href} 
+                            className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+                          >
                             {subItem.label}
                           </a>
                         </DropdownMenuItem>
@@ -45,7 +51,7 @@ export const Header = () => {
                   <a 
                     key={idx}
                     href={item.href} 
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-sm px-2 py-1"
                   >
                     {item.label}
                   </a>
@@ -56,18 +62,26 @@ export const Header = () => {
           
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <Button variant="ghost" size="icon">
-              <Search className="h-5 w-5" />
+            <Button 
+              variant="ghost" 
+              size="icon"
+              aria-label="Suche öffnen"
+            >
+              <Search className="h-5 w-5" aria-hidden="true" />
             </Button>
             
             <Sheet>
               <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  aria-label="Menü öffnen"
+                >
+                  <Menu className="h-5 w-5" aria-hidden="true" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-card">
-                <nav className="flex flex-col gap-4 mt-8">
+              <SheetContent side="right" className="bg-card" aria-label="Mobile Navigation">
+                <nav className="flex flex-col gap-4 mt-8" role="navigation" aria-label="Mobile Hauptnavigation">
                   {navItems.map((item, idx) => (
                     <div key={idx}>
                       {item.submenu ? (
@@ -80,7 +94,7 @@ export const Header = () => {
                               <a
                                 key={subIdx}
                                 href={subItem.href}
-                                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                className="text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-sm px-2 py-1"
                               >
                                 {subItem.label}
                               </a>
@@ -90,7 +104,7 @@ export const Header = () => {
                       ) : (
                         <a
                           href={item.href}
-                          className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                          className="text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-sm px-2 py-1"
                         >
                           {item.label}
                         </a>
