@@ -1,4 +1,11 @@
 import { flyersData } from "@/data/flyersData";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const DigitalFlyersSection = () => {
   return (
@@ -13,21 +20,30 @@ export const DigitalFlyersSection = () => {
           </p>
         </div>
         
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto">
-          {flyersData.flyers.map((flyer, index) => (
-            <div
-              key={flyer.id}
-              className="break-inside-avoid mb-6 group"
-            >
-              <div className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <img
-                  src={flyer.image}
-                  alt={flyer.title}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-            </div>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4 items-center">
+              {flyersData.flyers.map((flyer) => (
+                <CarouselItem key={flyer.id} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img
+                      src={flyer.image}
+                      alt={flyer.title}
+                      className="w-full h-auto max-w-[400px] mx-auto object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0" />
+            <CarouselNext className="right-0" />
+          </Carousel>
         </div>
       </div>
     </section>
