@@ -24,20 +24,20 @@ export const NewsCarousel = () => {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 items-stretch">
             {newsItems.map((item) => (
               <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-4">
+                <Card className="hover:shadow-md transition-shadow h-full">
+                  <CardContent className="p-4 h-full">
+                    <div className="flex items-center gap-4 h-full">
                       <img 
                         src={item.image} 
                         alt={item.title}
-                        className="w-20 h-20 object-cover rounded"
+                        className="w-20 h-20 object-cover rounded flex-shrink-0"
                       />
-                      <div className="flex-1">
+                      <div className="flex-1 flex flex-col justify-center">
                         {item.isNew && (
-                          <Badge className="bg-primary text-primary-foreground mb-2">Neu</Badge>
+                          <Badge className="bg-primary text-primary-foreground mb-2 w-fit">Neu</Badge>
                         )}
                         <h3 className="font-bold text-foreground">{item.title}</h3>
                         <p className="text-sm text-muted-foreground">{item.subtitle}</p>
