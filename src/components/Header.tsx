@@ -38,7 +38,9 @@ export const Header = () => {
                       {item.submenu.map((subItem, subIdx) => (
                         <DropdownMenuItem key={subIdx} asChild>
                           <a 
-                            href={subItem.href} 
+                            href={subItem.href}
+                            target={subItem.external ? "_blank" : undefined}
+                            rel={subItem.external ? "noopener noreferrer" : undefined}
                             className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
                           >
                             {subItem.label}
@@ -94,6 +96,8 @@ export const Header = () => {
                               <a
                                 key={subIdx}
                                 href={subItem.href}
+                                target={subItem.external ? "_blank" : undefined}
+                                rel={subItem.external ? "noopener noreferrer" : undefined}
                                 className="text-sm font-medium text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-sm px-2 py-1"
                               >
                                 {subItem.label}

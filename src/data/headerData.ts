@@ -3,20 +3,41 @@ import { HeaderData } from "@/types/header";
 export const headerData: HeaderData = {
   logo: "DIE LINKE",
   navItems: [
-    { label: "Startseite", href: "/" },
-    { label: "Kreisverband", href: "/kreisverband" },
-    { label: "Kreisvorstand", href: "/kreisvorstand" },
-    { label: "Fraktion", href: "/fraktion" },
-    { label: "DIE LINKE ECKE", href: "/die-linke-ecke" },
+    { label: "Start", href: "/" },
     { 
-      label: "Hilfe & Beratung", 
+      label: "Partei & Personen", 
       href: "#",
       submenu: [
-        { label: "Die Linke hilft", href: "/die-linke-hilft" },
-        { label: "Hartz-4 Hilfe", href: "/hartz-4-hilfe" },
+        { label: "Kreisvorstand", href: "/kreisvorstand" },
+        { label: "Fraktion-News", href: "/fraktion" },
+        { label: "Die Linke Ecke", href: "/die-linke-ecke" },
       ]
     },
-    { label: "Kontakt", href: "/kontakt" },
-    { label: "Archiv", href: "/archiv" },
+    { 
+      label: "Wahlen 2026", 
+      href: "#",
+      submenu: [
+        { label: "Wahlprogramm & Infos", href: "/archiv" },
+        { label: "Aktuelle Pressemitteilungen", href: "/archiv" },
+      ]
+    },
+    { 
+      label: "Aktiv werden", 
+      href: "#",
+      submenu: [
+        { label: "Termine", href: "/archiv" },
+        { label: "Spenden", href: "/kontakt" },
+        { label: "Mitglied werden", href: "https://www.die-linke.de/mitmachen/mitglied-werden/", external: true },
+      ]
+    },
+    { 
+      label: "Beratung & Kontakt", 
+      href: "#",
+      submenu: [
+        { label: "Sozialberatung", href: "/die-linke-hilft" },
+        { label: "Kontaktformular", href: "/kontakt" },
+        { label: "Pressekontakt", href: "/fraktion" },
+      ]
+    },
   ],
 };
