@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ServiceBar } from "@/components/ServiceBar";
 import { CampaignGrid } from "@/components/CampaignGrid";
-import { EventsPreview } from "@/components/EventsPreview";
+import { EventsSection } from "@/components/EventsSection";
 import { CTARow } from "@/components/CTARow";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
@@ -15,7 +15,7 @@ const Index = () => {
         <Hero />
         <ServiceBar />
         <CampaignGrid />
-        <EventsPreview />
+        <EventsSection />
         <CTARow />
       </main>
       <Footer />
