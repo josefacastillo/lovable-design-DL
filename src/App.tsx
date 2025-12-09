@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { SocialSidebar } from "@/components/SocialSidebar";
+import { BackToTopButton } from "@/components/BackToTopButton";
+import { MobileSocialBar } from "@/components/MobileSocialBar";
 import Index from "./pages/Index";
 import Kreisverband from "./pages/Kreisverband";
 import Kreisvorstand from "./pages/Kreisvorstand";
@@ -26,6 +28,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <SocialSidebar />
+          <BackToTopButton />
+          <MobileSocialBar />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/kreisverband" element={<Kreisverband />} />
