@@ -43,7 +43,7 @@ export const SocialSidebar = () => {
   ];
 
   return (
-    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40 hidden md:flex">
+    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40 hidden">
       <div className="flex flex-col bg-card border border-border rounded-r-lg shadow-lg overflow-hidden">
         {/* Toggle button */}
         <button
