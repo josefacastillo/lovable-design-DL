@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageContent } from "@/types/page-content";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
-
+import { InlineShareSection } from "@/components/InlineShareSection";
 interface ContentPageTemplateProps {
   data: PageContent;
   children?: React.ReactNode;
@@ -48,6 +48,8 @@ export const ContentPageTemplate = ({ data, children }: ContentPageTemplateProps
             ))}
             
             {children}
+            
+            <InlineShareSection />
           </div>
         </section>
       </main>
