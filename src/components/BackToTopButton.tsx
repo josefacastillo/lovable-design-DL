@@ -30,7 +30,7 @@ export const BackToTopButton = () => {
       onClick={scrollToTop}
       variant="secondary"
       size="icon"
-      className="fixed bottom-6 right-6 z-40 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
+      className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
       aria-label="Nach oben scrollen"
     >
       <ArrowUp size={20} aria-hidden="true" />
