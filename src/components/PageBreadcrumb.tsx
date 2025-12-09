@@ -35,6 +35,9 @@ const buildRouteMap = (): Record<string, { label: string; parent?: string }> => 
   const additionalRoutes: Record<string, { label: string; parent?: string }> = {
     "/kreisverband": { label: "Kreisverband", parent: "Partei & Personen" },
     "/hartz-4-hilfe": { label: "Hartz-4-Hilfe", parent: "Beratung & Kontakt" },
+    "/archiv": { label: "Archiv" },
+    "/die-linke-ecke": { label: "Die Linke Ecke", parent: "Partei & Personen" },
+    "/die-linke-hilft": { label: "Sozialberatung", parent: "Beratung & Kontakt" },
   };
 
   return { ...map, ...additionalRoutes };
