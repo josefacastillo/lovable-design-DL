@@ -17,6 +17,7 @@ import Hartz4Hilfe from "./pages/Hartz4Hilfe";
 import Kontakt from "./pages/Kontakt";
 import Archiv from "./pages/Archiv";
 import OnePager from "./pages/OnePager";
+import OnePagerAlt from "./pages/OnePagerAlt";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/archiv" element={<Archiv />} />
             <Route path="/one-pager" element={<OnePager />} />
+            <Route path="/one-pager-alt" element={<OnePagerAlt />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
