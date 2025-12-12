@@ -100,10 +100,10 @@ const OnePager = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-primary-foreground bg-primary-foreground/15 text-primary-foreground hover:bg-primary-foreground/25 backdrop-blur-sm"
                 onClick={() => scrollToSection("hilfe")}
               >
-                Du brauchst Hilfe?
+                Ich brauche Hilfe
               </Button>
             </div>
 
