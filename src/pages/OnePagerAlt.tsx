@@ -18,41 +18,50 @@ import {
   Building2,
   Vote,
   HeartHandshake,
-  Flame,
+  Sparkles,
   Users,
   ArrowRight,
+  Calendar,
   CheckCircle2
 } from "lucide-react";
 
-// Campaign data focused on current fights
-const kaempfe = [
+// Themes with collaborative/constructive language
+const themen = [
   {
-    title: "Strahlenberger Straße",
-    problem: "Menschen sollen aus ihren Wohnungen verdrängt werden.",
-    stance: "Wir kämpfen für Mieterschutz und gegen Luxussanierung!",
-    tag: "Wohnungskampf",
+    title: "Bezahlbares Wohnen",
+    description: "Wir setzen uns für Mieterschutz und sozialen Wohnungsbau ein.",
+    stance: "Gemeinsam für ein Zuhause, das sich jeder leisten kann.",
+    tag: "Wohnen",
     icon: Home,
     link: "/archiv",
   },
   {
-    title: "Kulturkarree retten",
-    problem: "Die Stadt will öffentliche Flächen privatisieren.",
-    stance: "Kulturkarree für alle – nicht für Investoren!",
+    title: "Lebendige Stadtkultur",
+    description: "Öffentliche Räume gehören allen – wir gestalten sie gemeinsam.",
+    stance: "Kultur und Begegnung statt Leerstand und Spekulation.",
     tag: "Stadtentwicklung",
     icon: Building2,
     link: "/fraktion",
   },
   {
     title: "Kommunalwahl 2026",
-    problem: "Offenbach braucht eine starke linke Stimme.",
-    stance: "Mit uns für ein soziales Offenbach!",
+    description: "Mit einer starken linken Stimme im Stadtparlament.",
+    stance: "Gemeinsam gestalten wir ein soziales Offenbach.",
     tag: "Wahl 2026",
     icon: Vote,
     link: "/kreisvorstand",
   },
 ];
 
-const OnePager = () => {
+// Election 2026 goals
+const wahlziele = [
+  "Bezahlbare Mieten für alle",
+  "Kostenloser ÖPNV in Offenbach",
+  "Mehr Sozialwohnungen bauen",
+  "Kinderbetreuung ausbauen",
+];
+
+const OnePagerAlt = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -62,13 +71,13 @@ const OnePager = () => {
       <Header />
       
       <main>
-        {/* Hero: The Fight */}
+        {/* Hero: Collaborative tone */}
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${heroData.backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/80 to-primary-dark/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/80 to-secondary/90" />
           
           <div className="container mx-auto px-4 text-center relative z-10 py-12">
             <Badge 
@@ -80,23 +89,22 @@ const OnePager = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 max-w-4xl mx-auto leading-tight">
-              Wir kämpfen für<br />
-              <span className="text-accent">bezahlbares Wohnen</span><br />
-              in Offenbach
+              Gemeinsam für ein<br />
+              <span className="text-accent">soziales Offenbach</span>
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Gegen Verdrängung. Gegen Sozialabbau. Für ein solidarisches Offenbach.
+              Solidarisch. Gerecht. Für alle. Wir gestalten unsere Stadt gemeinsam.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Button 
                 size="lg" 
                 className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold"
-                onClick={() => scrollToSection("kaempfe")}
+                onClick={() => scrollToSection("themen")}
               >
-                <Flame className="w-5 h-5 mr-2" aria-hidden="true" />
-                Kämpfe mit uns
+                <Sparkles className="w-5 h-5 mr-2" aria-hidden="true" />
+                Unsere Themen
               </Button>
               <Button 
                 size="lg" 
@@ -104,12 +112,12 @@ const OnePager = () => {
                 className="border-primary-foreground bg-primary-foreground/15 text-primary-foreground hover:bg-primary-foreground/25 backdrop-blur-sm"
                 onClick={() => scrollToSection("hilfe")}
               >
-                Ich brauche Hilfe
+                Beratung & Hilfe
               </Button>
             </div>
 
             <button 
-              onClick={() => scrollToSection("kaempfe")}
+              onClick={() => scrollToSection("themen")}
               className="animate-bounce"
               aria-label="Nach unten scrollen"
             >
@@ -118,45 +126,45 @@ const OnePager = () => {
           </div>
         </section>
 
-        {/* Current Fights / Campaigns */}
-        <section id="kaempfe" className="py-16 md:py-20 bg-background">
+        {/* Themes / Topics */}
+        <section id="themen" className="py-16 md:py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
-              <Badge variant="destructive" className="mb-4">
-                Aktuelle Kämpfe
+              <Badge variant="secondary" className="mb-4">
+                Unsere Themen
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Wofür wir gerade kämpfen
+                Wofür wir uns einsetzen
               </h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {kaempfe.map((kampf, index) => (
-                <Link key={index} to={kampf.link} className="group">
-                  <Card className="h-full border-2 border-border hover:border-primary transition-all hover:shadow-xl bg-card">
+              {themen.map((thema, index) => (
+                <Link key={index} to={thema.link} className="group">
+                  <Card className="h-full border-2 border-border hover:border-accent transition-all hover:shadow-xl bg-card">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-primary/10">
-                          <kampf.icon className="w-6 h-6 text-primary" aria-hidden="true" />
+                        <div className="p-2 rounded-lg bg-accent/10">
+                          <thema.icon className="w-6 h-6 text-accent" aria-hidden="true" />
                         </div>
                         <Badge variant="outline" className="text-xs">
-                          {kampf.tag}
+                          {thema.tag}
                         </Badge>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {kampf.title}
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                        {thema.title}
                       </h3>
                       
                       <p className="text-muted-foreground text-sm mb-3">
-                        {kampf.problem}
+                        {thema.description}
                       </p>
                       
-                      <p className="text-foreground font-medium text-sm border-l-4 border-primary pl-3 bg-primary/5 py-2">
-                        {kampf.stance}
+                      <p className="text-foreground font-medium text-sm border-l-4 border-accent pl-3 bg-accent/5 py-2">
+                        {thema.stance}
                       </p>
                       
-                      <div className="flex items-center text-primary font-medium text-sm mt-4">
+                      <div className="flex items-center text-accent font-medium text-sm mt-4">
                         Mehr erfahren
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                       </div>
@@ -178,37 +186,27 @@ const OnePager = () => {
                   Kommunalwahl 2026
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  2026: Zeit für Veränderung
+                  Gemeinsam gestalten
                 </h2>
                 <p className="text-secondary-foreground/80 text-lg max-w-2xl mx-auto">
-                  Bei der Kommunalwahl entscheiden wir, wer in Offenbach das Sagen hat. 
-                  Wir kämpfen für eine Stadt, die allen gehört – nicht nur den Reichen.
+                  Bei der Kommunalwahl 2026 entscheiden wir, wie Offenbach in den nächsten Jahren aussehen wird. 
+                  Wir stehen für ein gerechtes und lebenswertes Offenbach.
                 </p>
               </div>
               
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center gap-3 bg-background/10 rounded-lg p-4">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                  <span className="font-medium">Bezahlbare Mieten für alle</span>
-                </div>
-                <div className="flex items-center gap-3 bg-background/10 rounded-lg p-4">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                  <span className="font-medium">Kostenloser ÖPNV in Offenbach</span>
-                </div>
-                <div className="flex items-center gap-3 bg-background/10 rounded-lg p-4">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                  <span className="font-medium">Mehr Sozialwohnungen bauen</span>
-                </div>
-                <div className="flex items-center gap-3 bg-background/10 rounded-lg p-4">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                  <span className="font-medium">Kinderbetreuung ausbauen</span>
-                </div>
+                {wahlziele.map((ziel, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-background/10 rounded-lg p-4">
+                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium">{ziel}</span>
+                  </div>
+                ))}
               </div>
               
               <div className="text-center">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                   <Link to="/kreisvorstand">
-                    Zum Wahlprogramm
+                    Mehr zum Wahlprogramm
                     <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
                   </Link>
                 </Button>
@@ -218,48 +216,48 @@ const OnePager = () => {
         </section>
 
         {/* Solidarity & Help */}
-        <section id="hilfe" className="py-16 md:py-20 bg-primary text-primary-foreground">
+        <section id="hilfe" className="py-16 md:py-20 bg-accent text-accent-foreground">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <HeartHandshake className="w-12 h-12 mx-auto mb-4 opacity-80" aria-hidden="true" />
               <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                Wir stehen an deiner Seite
+                Wir sind für dich da
               </h2>
-              <p className="text-primary-foreground/80 text-lg">
-                Kostenlos. Solidarisch. Ohne Bürokratie.
+              <p className="text-accent-foreground/80 text-lg">
+                Kostenlose Beratung und Unterstützung.
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              <Card className="bg-background/10 border-primary-foreground/20 backdrop-blur">
-                <CardContent className="p-6 text-primary-foreground">
+              <Card className="bg-background/10 border-accent-foreground/20 backdrop-blur">
+                <CardContent className="p-6 text-accent-foreground">
                   <h3 className="text-2xl font-bold mb-3">Sozialsprechstunde</h3>
                   <p className="opacity-90 mb-4">
-                    Probleme mit dem Amt? Fragen zu Bürgergeld, Wohngeld oder Rente? 
-                    Wir helfen dir – ohne Termin, ohne Kosten.
+                    Fragen zu Bürgergeld, Wohngeld oder Rente? 
+                    Wir beraten dich kostenlos und vertraulich.
                   </p>
                   <div className="flex items-center gap-2 text-sm opacity-80 mb-4">
                     <Clock className="w-4 h-4" aria-hidden="true" />
                     <span>Jeden Donnerstag, 16–18 Uhr</span>
                   </div>
-                  <Button variant="secondary" asChild>
+                  <Button className="bg-background text-foreground hover:bg-background/90" asChild>
                     <Link to="/die-linke-hilft">Mehr erfahren</Link>
                   </Button>
                 </CardContent>
               </Card>
               
-              <Card className="bg-background/10 border-primary-foreground/20 backdrop-blur">
-                <CardContent className="p-6 text-primary-foreground">
+              <Card className="bg-background/10 border-accent-foreground/20 backdrop-blur">
+                <CardContent className="p-6 text-accent-foreground">
                   <h3 className="text-2xl font-bold mb-3">Heizkostencheck</h3>
                   <p className="opacity-90 mb-4">
-                    Deine Heizkostenabrechnung ist zu hoch? Wir prüfen sie auf Fehler 
-                    und helfen dir, dein Geld zurückzuholen.
+                    Wir prüfen deine Heizkostenabrechnung auf Fehler 
+                    und helfen dir, zu viel gezahltes Geld zurückzuholen.
                   </p>
                   <div className="flex items-center gap-2 text-sm opacity-80 mb-4">
                     <Clock className="w-4 h-4" aria-hidden="true" />
                     <span>Nach Vereinbarung</span>
                   </div>
-                  <Button variant="secondary" asChild>
+                  <Button className="bg-background text-foreground hover:bg-background/90" asChild>
                     <Link to="/hartz-4-hilfe">Termin anfragen</Link>
                   </Button>
                 </CardContent>
@@ -268,26 +266,27 @@ const OnePager = () => {
           </div>
         </section>
 
-        {/* Upcoming Actions */}
-        <section id="aktionen" className="py-16 md:py-20 bg-muted/30">
+        {/* Upcoming Events */}
+        <section id="termine" className="py-16 md:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <Badge variant="secondary" className="mb-4">
+                <Calendar className="w-4 h-4 mr-2" aria-hidden="true" />
                 Termine
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                Sei dabei!
+                Komm vorbei!
               </h2>
               <p className="text-muted-foreground">
-                Komm vorbei, mach mit, lern uns kennen.
+                Lern uns kennen bei unseren Veranstaltungen.
               </p>
             </div>
             
             <div className="max-w-2xl mx-auto space-y-4">
               {eventsData.events.slice(0, 3).map((event, i) => (
-                <Card key={i} className="overflow-hidden border-l-4 border-l-primary">
+                <Card key={i} className="overflow-hidden border-l-4 border-l-accent">
                   <CardContent className="p-4 flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-lg p-3 text-center min-w-[70px]">
+                    <div className="bg-accent text-accent-foreground rounded-lg p-3 text-center min-w-[70px]">
                       <p className="text-2xl font-bold">{new Date(event.date).getDate()}</p>
                       <p className="text-xs uppercase">
                         {new Date(event.date).toLocaleDateString("de-DE", { month: "short" })}
@@ -324,13 +323,13 @@ const OnePager = () => {
         <section id="mitmachen" className="py-16 md:py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <Users className="w-12 h-12 mx-auto mb-4 text-primary" aria-hidden="true" />
+              <Users className="w-12 h-12 mx-auto mb-4 text-accent" aria-hidden="true" />
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Werde Teil der Bewegung
+                Mach mit!
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Wir sind über 300 Menschen in Offenbach, die sich für ein soziales und solidarisches 
-                Miteinander engagieren. Werde Teil von uns!
+                Über 300 Menschen in Offenbach engagieren sich bei uns für eine solidarische Stadt. 
+                Werde Teil unserer Gemeinschaft!
               </p>
               
               <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -353,12 +352,12 @@ const OnePager = () => {
               <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
                 <Card className="bg-muted/50">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-primary" aria-hidden="true" />
+                    <Mail className="w-5 h-5 text-accent" aria-hidden="true" />
                     <div className="text-left">
                       <p className="text-xs text-muted-foreground">E-Mail</p>
                       <a 
                         href="mailto:info@die-linke-offenbach.de" 
-                        className="text-sm font-medium text-foreground hover:text-primary"
+                        className="text-sm font-medium text-foreground hover:text-accent"
                       >
                         info@die-linke-offenbach.de
                       </a>
@@ -367,7 +366,7 @@ const OnePager = () => {
                 </Card>
                 <Card className="bg-muted/50">
                   <CardContent className="p-4 flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-primary" aria-hidden="true" />
+                    <MapPin className="w-5 h-5 text-accent" aria-hidden="true" />
                     <div className="text-left">
                       <p className="text-xs text-muted-foreground">Büro</p>
                       <p className="text-sm font-medium text-foreground">
@@ -388,4 +387,4 @@ const OnePager = () => {
   );
 };
 
-export default OnePager;
+export default OnePagerAlt;
